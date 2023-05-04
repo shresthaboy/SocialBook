@@ -1,0 +1,28 @@
+.facebook-story{
+    display: flex;
+    justify-content: center;
+    margin: 80px;
+  
+}
+.story-section{
+    flex-basis: 20%;
+    border: 1px solid black;
+    border-radius: 6px;
+    position: relative;
+}
+.story-image img{
+    border-radius: 4px;
+    width: 100%;
+  
+}
+
+.post-icon{
+    position: absolute;
+    left: 40%;
+    bottom: 16%;
+    width: 25px;
+}
+.story-text{
+    font-size: 20px;
+    text-align: center;
+}

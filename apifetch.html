@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Fetch API Sandbox</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <button id="getText">GetText</button>
+    <button id="output"></button>
+    <button id="getUsers">Get Users</button>
+
+
+    <script>
+        // Adding event listener to the buttom id getText
+        document.getElementById('getText').addEventListener('click', getText);
+        document.getElementById('getUsers').addEventListener('click', getUsers);
+        function getText() {
+            // fetch('./sample.txt')
+            // .then(function(res){
+            //     return(res.text());
+            // })
+            // .then(function(data){
+            //     console.log(data);
+            // });
+            fetch('sample.txt')
+                .then((res) => res.text())
+                .then((data) => {
+                    // ------To display the sample.txt on the webpage--------
+                    document.getElementById('output').innerHTML = data;
+                })
+                .catch((err) => console.log(err))
+        }
+
+        function getUsers() {
+            fetch('users.json')
+                .then((res) => res.json())
+                .then((data) => {
+                    let output = '<h2>Users</h2>';
+                    data.forEach(function (user) {
+                        output += `
+                    <ul>
+                        <li>ID: ${user.id}</li>
+                        <li>Name: ${user.name}</li>
+                        <li>Email: ${user.email}</li>
+                        </ul>
+                    `;
+                    });
+                    document.getElementById('output').innerHTML = output;
+
+                })
+        }
+
+    </script>
+
+
+
+
+    <header class="primary-header">
+        <img src="" alt="" class="logo">
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="abc"></a></li>
+            <li><a href="abc"></a></li>
+            <li><a href="abc"></a></li>
+            <li><a href="abc"></a></li>
+            <li><a href="abc"></a></li>
+        </ul>
+    </nav>
+
+    <header class="primary-header">
+        <container>
+            <img src="" alt="" class="logo">
+            <nav>
+                <ul>
+                    <li><a href=""></a></li>
+                    <li><a href=""></a></li>
+                    <li><a href=""></a></li>
+                    <li><a href=""></a></li>
+                    <li><a href=""></a></li>
+                </ul>
+            </nav>
+        </container>
+    </header>
+
+    <header class="primary-header">
+        <div class="container">
+            <nav>
+                <img src="" alt="" class="logo">
+                <ul>
+                    <li><a href=""></a></li>
+                </ul>
+                </img>
+            </nav>
+        </div>
+    </header>
+    
+    <section id="intro">
+        <div class="container">
+            <h2 class="section-subtitle text-accent"> </h2>
+            <p class="section-subtitle"></p>
+            <div class="row">
+                <div class="col">
+                    <h3></h3>
+                    <p></p>
+                    <p></p>
+                </div>
+                <div class="col">
+                    <h3></h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, laborum.
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa mollitia, 
+                        consequatur perferendis eveniet quod recusandae, sequi, ratione distinctio 
+                        tempore ipsum ducimus delectus vitae commodi dolore velit ab inventore 
+                        necessitatibus voluptate harum ad asperiores eos doloremque tenetur repudiandae.
+                         Natus animi deleniti perferendis deserunt mollitia quos dolores ullam nostrum, 
+                         reprehenderit consectetur. Quae autem quibusdam at harum cumque ipsum rem sed,
+                          veritatis et? Est rem, voluptates explicabo eveniet corporis laboriosam sequi
+                           obcaecati architecto iure quasi, tempora tempore accusantium! Ea odit dolore
+                            voluptates labore sit tempora, sapiente vel iste voluptas debitis optio 
+                            excepturi quae molestias nobis quidem recusandae nisi consequuntur quam? 
+                            Dolore, laboriosam explicabo.
+                    </p>
+                    <p></p>
+                </div>
+                <div class="col">
+                    <h3></h3>
+                    <p></p>
+                    <p></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="col">
+        <h3></h3>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam, magni.</p>
+        <p>Aperiam reprehenderit tempora ullam earum suscipit nulla, blanditiis cum deserunt!</p>
+    </div>
+    <div class="col">
+        <h3></h3>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. A, laboriosam?</p>
+        <p>Aliquid eius magnam alias dolore optio sequi quam quaerat quo?</p>
+    </div>
+    <div class="col">
+        <h3></h3>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla, alias.</p>
+        <p>Mollitia eligendi eum ab id repellendus! Quas sed eaque at!</p>
+    </div>
+      
+</body>
+
+</html>
